@@ -21,8 +21,7 @@ Easy to use effects for uGUI. Supports following effects.
 ![image](https://user-images.githubusercontent.com/12690315/34595717-6b00e8c6-f21d-11e7-98b6-798cf03f2ed5.gif)
 * Supports multiple shadow effect for reduce rendering vertices  
 ![image](https://user-images.githubusercontent.com/12690315/34552373-600fdab2-f164-11e7-8565-21c15af92a93.png)
-
-
+* New Graphic component for capturing image
 
 
 ## Requirement
@@ -45,6 +44,20 @@ Easy to use effects for uGUI. Supports following effects.
 
 
 
+## UIEffect for CapturedImage
+
+`UIEffectCapturedImage` is unlike post effects, it only provides effects on the rendered result (= captured image) of a frame.
+This effect is non-realtime, light-weight, less-camera, blit only once, but effective.
+
+* Camera for processing effect is unnecessary.
+* Process effect only once after `UIEffectCapturedImage.Capture`.
+* Using reduction buffer, keep used memory size small and keep rendering load are small.
+* When GameObjects with motion are on the screen, a result texture may be stirred.
+* You can overlay and display like as: [Screen] | [captured image with effect] | [Dialog A] | [captured image with effect] | [Dialog B].
+
+
+
+
 ## Note: Unity 5.6+
 
 In Unity 5.6+, Canvas supports **Additional Shader Channels**.  
@@ -57,12 +70,22 @@ Please enable `TexCoord1` to use UIEffect.
 
 ## Demo
 
-[WebGL Demo](https://developer.cloud.unity3d.com/share/b1Ow2w4KbX/webgl/)
+[WebGL Demo](https://developer.cloud.unity3d.com/share/b1gWWu9YWX/webgl/)
+
+* All effect
+* Transition
+* Dialog window with blur background
+* Included in unitypackage
 
 
 
 
 ## Release Notes
+
+### ver.1.3.0
+
+* Feature: New Graphic component for capturing image.
+* Demo: Add transition blur button & dialog with captured image.
 
 ### ver.1.2.0
 
